@@ -12,7 +12,7 @@ const config = {
 
 async function onCall({ message }) {
   try {
-      const supportServerThreadID = ""; 
+      const supportServerThreadID = "24265591886410599"; 
 
       if (!supportServerThreadID) {
           return message.reply("Support server thread ID is not configured.");
