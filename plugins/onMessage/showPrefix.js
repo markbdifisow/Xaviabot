@@ -6,6 +6,8 @@ const langData = {
     }
 };
 
+const reactions = ["airkiss","angrystare","bite","bleh","blush","brofist","celebrate","cheers","clap","confused","cool","cry","cuddle","dance","drool","evillaugh","facepalm","handhold","happy","headbang","hug","huh","kiss","laugh","lick","love","mad","nervous","no","nom","nosebleed","nuzzle","nyah","pat","peek","pinch","poke","pout","punch","roll","run","sad","scared","shout","shrug","shy","sigh","sip","slap","sleep","slowclap","smack","smile","smug","sneeze","sorry","stare","stop","surprised","sweat","thumbsup","tickle","tired","wave","wink","woah","yawn","yay","yes"];
+
 async function onCall({ message, getLang, data }) {
     const messageBody = message.body.toLowerCase().trim();
     const prefixTriggers = [
@@ -17,11 +19,11 @@ async function onCall({ message, getLang, data }) {
 
     if (prefixTriggers.includes(messageBody) && message.senderID !== global.botID) {
         const prefix = data?.thread?.data?.prefix || global.config.PREFIX;
-        
+        const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
 
         try {
-            const { data: gif } = await axios.get(`https://i.ibb.co/rKXxCQwJ/rapido.jpg`);
-            const response = await axios.get(gif, { responseType: 'stream' });
+            const { data: gifData } = await axios.get(`https://i.ibb.co/rKXxCQwJ/rapido.jpg`);
+            const response = await axios.get(gifData.url, { responseType: 'stream' });
             await message.reply({
                 body: getLang("prefix", { prefix }),
                 attachment: response.data
