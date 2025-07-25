@@ -2,33 +2,25 @@ import axios from 'axios';
 
 const langData = {
     "en_US": {
-        "prefix": `${global.config.NAME} 𝚙𝚛𝚎𝚏𝚒𝚡 𝚒𝚜: {prefix}`
+        "prefix": `${global.config.PREFIX} 𝚙𝚛𝚎𝚏𝚒𝚡 𝚒𝚜: [ {prefix} ]`
     }
 };
 
 async function onCall({ message, getLang, data }) {
-    const messageBody = message.body.toLowerCase().trim();
-    const prefixTriggers = [
-        "prefix",
-        "prefix?",
-        "Prefix"
-
-        ];
-
-    if (prefixTriggers.includes(messageBody) && message.senderID !== global.botID) {
+    const message_body = message.body.trim();
+    const tigger = ["prefix"];
+    
+    if (tigger.includes(message_body.toLowerCase())) {
         const prefix = data?.thread?.data?.prefix || global.config.PREFIX;
         
-
         try {
-            const { data: gif } = await axios.get(`https://i.ibb.co/rKXxCQwJ/rapido.jpg`);
-            const response = await axios.get(gif, { responseType: 'stream' });
+            const response = await axios.get('https://i.imgur.com/4NkWpSF.jpg', { responseType: 'stream' });
             await message.reply({
-                body: getLang("prefix", { prefix }),
+                body: getLang("prefix", { prefix: prefix }),
                 attachment: response.data
             });
-        } catch (error) {
-            console.error(error);
-            await message.reply(getLang("prefix", { prefix }));
+        } catch {
+            await message.reply(getLang("prefix", { prefix: prefix }));
         }
     }
 }
