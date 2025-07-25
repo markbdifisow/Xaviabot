@@ -14,7 +14,7 @@ async function onCall({ message, getLang, data }) {
         const prefix = data?.thread?.data?.prefix || global.config.PREFIX;
         
         try {
-            const response = await axios.get('https://i.ibb.co/Nn2PVzYm/4NkWpSF.jpg', { responseType: 'stream' });
+            const response = await axios.get('https://files.catbox.moe/upt9wp.jpg', { responseType: 'stream' });
             await message.reply({
                 body: getLang("prefix", { prefix: prefix }),
                 attachment: response.data
