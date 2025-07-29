@@ -12,7 +12,7 @@ const config = {
 
 async function onCall({ message: m, args: ar }) {
   const q = ar.join(" ");
-  if (!q) return m.reply("Please provide a question.");
+  if (!q) return m.reply("🤖𝗞𝗘𝗜𝗝𝗢 𝗙𝗕𝗕𝗢𝗧: Please provide a question first.");
 
   try {
     m.react("⏳");
