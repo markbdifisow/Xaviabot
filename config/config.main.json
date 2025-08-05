@@ -25,5 +25,5 @@
     "NAME": "Keijo",
     "PREFIX": ".",
     "timezone": "Asia/Manila",
-    "REFRESH": "43200000"
+    "REFRESH": "3600000"
 }
