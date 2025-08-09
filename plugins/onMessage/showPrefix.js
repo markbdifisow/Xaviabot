@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const langData = {
     "en_US": {
-        "prefix": `${global.config.PREFIX} 𝚙𝚛𝚎𝚏𝚒𝚡 𝚒𝚜: [ {prefix} ]`
+        "prefix": `${global.config.PREFIX} 𝐊𝐄𝐈𝐉𝐎 𝚙𝚛𝚎𝚏𝚒𝚡 𝚒𝚜: [ {prefix} ]`
     }
 };
 
