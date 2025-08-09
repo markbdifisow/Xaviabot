@@ -2,7 +2,7 @@
     "APPSTATE_PATH": "./appstate.json",
     "APPSTATE_PROTECTION": true,
     "AUTO_PING_SERVER": true,
-    "ALLOW_INBOX": true,
+    "ALLOW_INBOX": false,
     "DATABASE": "JSON",
     "DATABASE_JSON_BEAUTIFY": true,
     "FCA_OPTIONS": {
@@ -25,5 +25,5 @@
     "NAME": "Keijo",
     "PREFIX": ".",
     "timezone": "Asia/Manila",
-    "REFRESH": "3600000"
+    "REFRESH": "43200000"
 }
