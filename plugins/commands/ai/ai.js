@@ -6,13 +6,13 @@ const config = {
   permissions: [0],
   usage: "[question]",
   cooldown: 10,
-  description: "Interact with Alex AI",
+  description: "Interact with 𝐊𝐞𝐢𝐣𝐨 𝐀𝐢",
   credits: "rapido"
 };
 
 async function onCall({ message: m, args: ar }) {
   const q = ar.join(" ");
-  if (!q) return m.reply("🤖𝗞𝗘𝗜𝗝𝗢 𝗙𝗕𝗕𝗢𝗧: Please provide a question first.");
+  if (!q) return m.reply("Yup, 𝐊𝐞𝐢𝐣𝐨 𝐀𝐢 ako! 😎 Nandito ako para tulungan ka sa mga tanong, gawain, o kahit na pag-uusap lang. Anong gusto mo gawin o pag-usapan?🥰");
 
   try {
     m.react("⏳");
